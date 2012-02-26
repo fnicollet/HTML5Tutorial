@@ -32,7 +32,7 @@ util.EventDispatcher.prototype.context = null;
  * Call return false if a listener to stop the event propagation
  * @example bus.addEventListener('someEventType', onSomeEventType);
  * @param {string} type Event type, typically a String that will be stored in your event class
- * @param {function(event)} callback Reference to the event handler
+ * @param {function(Object)} callback Reference to the event handler
  * @param {Object=} context Optionnal scope for the event handler
  * @param {number=} priority Positive Number (0 by default). The higher the priority is, the sooner the event handler gets called
  */
