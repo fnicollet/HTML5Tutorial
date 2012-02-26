@@ -160,18 +160,18 @@
             this.bus = new util.EventDispatcher(this);
         };
         */
-        var compA = new test.ComponentA();
-        compA.bus.addEventListener("someEventType", function (event) {
-            log(this); // logs test.ComponentA
-        });
-        compA.bus.dispatchEvent({type:"someEventType"});
+var compA = new test.ComponentA();
+compA.bus.addEventListener("someEventType", function (event) {
+    log(this); // logs test.ComponentA
+});
+compA.bus.dispatchEvent({type:"someEventType"});
         // clear
         compA.bus.removeEventListener("someEventType");
-        // passing the outer context in the data parameter (3rd parameter).
-        compA.bus.addEventListener("someEventType", function (event) {
-            log(this); // logs DOMWindow, which is the outer context
-        }, this);
-        compA.bus.dispatchEvent({type:"someEventType"});
+// passing the outer context in the data parameter (3rd parameter).
+compA.bus.addEventListener("someEventType", function (event) {
+    log(this); // logs DOMWindow, which is the outer context
+}, this);
+compA.bus.dispatchEvent({type:"someEventType"});
         // clear
         compA.bus.removeEventListener("someEventType");
     };
